@@ -1,0 +1,28 @@
+{
+  "name": "vscode-pyspark-strings",
+  "displayName": "VSCode Pyspark Strings",
+  "description": "Syntax highlighting for sql in pyspark strings",
+  "version": "0.1.0",
+  "publisher": "Casper Hart",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.5.0"
+  },
+  "categories": [
+    "Languages"
+  ],
+  "contributes": {
+    "grammars": [
+      {
+        "injectTo": [
+          "source.python"
+        ],
+        "scopeName": "inline.pyspark-sql",
+        "path": "./syntaxes/pyspark-sql.tmLanguage.json",
+        "embeddedLanguages": {
+          "meta.embedded.block.sql": "sql"
+        }
+      }
+    ]
+  }
+}
