@@ -2,12 +2,18 @@ from pyspark.sql import SparkSession
 
 
 def test():
-
+    """Test pyspark strings"""
     spark = SparkSession.builder.getOrCreate()
-    spark.sql("select * from users")
+    # not highlighted in comments
+    ## spark.sql("select * from users")
 
+    # single line
+    spark.sql("select * from users")  # comments still work
+
+    # triple quotes
     spark.sql("""select * from users""")
 
+    # testing strings still work (syntax above was closed)
     table = "users"
     spark.sql(f"select * from {table}")
     spark.sql(f"""select * from {table}""")
@@ -20,6 +26,8 @@ def test():
             col2
         from 
             users
+        where
+            col1 = 'value'
         """
     )
 
